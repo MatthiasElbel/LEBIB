@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lebib — Spielregeln</title>
+  <style>
+    :root {
+      --bg: #f0f8f5;
+      --card: #ffffff;
+      --accent: #1e7f4d;
+      --muted: #4b5563;
+      --glass: rgba(255, 255, 255, 0.8);
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(circle at center, #d3f9d8 0%, #a3e4c9 60%, #81c995 100%);
+      color: #1f2937;
+    }
+    .container {
+      max-width: 980px;
+      margin: 36px auto;
+      padding: 28px;
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border: 3px solid #1e7f4d33;
+      background-size: cover;
+      background-blend-mode: lighten;
+    }
+    header {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 32px;
+      margin: 0;
+      color: #065f46;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+    }
+    p.lead {
+      color: var(--muted);
+      font-weight: 500;
+    }
+    nav.toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 16px 0;
+    }
+    nav.toc a {
+      background: #1e7f4d;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    nav.toc a:hover {
+      background: #2ca66a;
+    }
+    section {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 18px;
+      border-radius: 14px;
+      margin: 16px 0;
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+    }
+    h2, h3 {
+      color: #065f46;
+    }
+    .rule {
+      margin: 10px 0;
+      padding-left: 12px;
+      border-left: 4px solid #1e7f4d66;
+    }
+    ul {
+      margin: 8px 0 12px 20px;
+    }
+    .note {
+      font-size: 13px;
+      color: var(--muted);
+      background: #ecfdf5;
+      padding: 8px;
+      border-radius: 8px;
+      border-left: 3px solid #1e7f4d;
+    }
+    .example {
+      background: #d1fae5;
+      padding: 10px;
+      border-radius: 8px;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    code {
+      background: #f9fafb;
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #047857;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 860px) {
+      .columns {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    details summary {
+      cursor: pointer;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: #ecfdf5;
+      border: 1px solid #1e7f4d33;
+    }
+    .hl {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .download {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #22c55e, #16a34a);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .download:hover {
+      background: linear-gradient(90deg, #16a34a, #15803d);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Lebib — Spielregeln</h1>
+      <p class="lead">Regeln &amp; Abläufe für das einzigartige Tischspiel <span class="hl">Lebib</span>, inspiriert von Billard.</p>
+    </header>
+
+    <nav class="toc" aria-label="Inhaltsverzeichnis">
+      <a href="#setup">Aufbau &amp; Ziel</a>
+      <a href="#anfang">Wer beginnt?</a>
+      <a href="#ablauf">Spielablauf</a>
+      <a href="#special">Special Würfe</a>
+      <a href="#ende">Spielende &amp; Shootout</a>
+      <a href="#faqs">Hinweise</a>
+    </nav>
+
+    <section id="setup">
+      <h2>Aufbau &amp; Ziel</h2>
+      <div class="rule">
+        <p>Zwei Spieler sitzen an den gegenüberliegenden kurzen Seiten eines Billard- oder Pooltisches. Jeder platziert vor sich <strong>acht Kugeln</strong> (Farben egal).</p>
+        <p>Ziel des Spiels: alle eigenen Kugeln in die beiden Löcher des Gegners einlochen.</p>
+      </div>
+    </section>
+
+    <section id="anfang">
+      <h2>Wer fängt an?</h2>
+      <div class="rule">
+        <p>Um zu bestimmen, wer beginnt, nimmt ein Spieler eine seiner Kugeln und versucht, diese mit der Hand in eines der gegnerischen Löcher zu rollen. Trifft er, muss der Gegner nachziehen. Treffen beide, wechselt das Ziel zwischen den Löchern, bis einer trifft und der andere verfehlt. Der Gewinner dieser Runde entscheidet, wer beginnt.</p>
+        <p class="note">Ab Partie Nummer 2 darf der Gewinner der letzten Partie bestimmen, wer anfängt.</p>
+      </div>
+    </section>
+
+    <section id="ablauf">
+      <h2>Spielablauf</h2>
+      <div class="rule">
+        <p>Zu Beginn jedes Zuges darf der aktive Spieler wählen, ob er einen <strong>normalen Wurf</strong> oder einen <strong>Special Wurf</strong> spielt.</p>
+      </div>
+      <details>
+        <summary>Normaler Wurf / Strafwurf</summary>
+        <div class="rule">
+          <p>Der Spieler nimmt eine Kugel und versucht, sie in ein beliebiges gegnerisches Loch zu rollen.</p>
+          <ul>
+            <li>Trifft er: Kugel bleibt im Loch — Gegner ist dran.</li>
+            <li>Verfehlt er: Kugel kommt zurück — Gegner ist dran.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section id="special">
+      <h2>Special Würfe</h2>
+      <p class="note">Special Würfe bieten Vorteile — Fehlschüsse werden härter bestraft.</p>
+
+      <div class="columns">
+        <div>
+          <h3>Doppelwurf</h3>
+          <div class="rule">
+            <p>Der Spieler nimmt zwei Kugeln (eine in jede Hand) und wirft sie gleichzeitig auf die beiden gegnerischen Löcher.</p>
+            <ul>
+              <li>Beide treffen → Spieler darf noch einmal werfen (max. 2x hintereinander).</li>
+              <li>Nur eine trifft → Gegner erhält einen Strafwurf.</li>
+              <li>Beide verfehlen → Gegner erhält zwei Strafwürfe.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3>Refill-Wurf</h3>
+          <div class="rule">
+            <p>Eine Kugel wird so gespielt, dass sie mindestens einmal die Bande trifft, bevor sie ins gegnerische Loch rollt.</p>
+            <ul>
+              <li>Trifft sie → Gegner erhält alle 8 Kugeln zurück.</li>
+              <li>Verfehlt sie → Der Spieler selbst erhält alle 8 Kugeln zurück.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3>All‑in</h3>
+          <div class="rule">
+            <p>Dieser Wurf darf erst gespielt werden, wenn der Gegner mindestens eine Kugel versenkt hat. Der Spieler wirft alle seine Kugeln abwechselnd auf beide gegnerischen Löcher.</p>
+            <p>Solange er trifft, darf er fortfahren. Verfehlt er eine Kugel, verliert er sofort.</p>
+            <p class="note">Optionale Regel: Abwechselnd mit linker und rechter Hand werfen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ende">
+      <h2>Spielende &amp; Shootout</h2>
+      <div class="rule">
+        <p>Gewonnen hat, wer zuerst keine Kugeln mehr besitzt. Hat der Startspieler diesen Zustand zuerst erreicht, darf der Gegner einmal nachziehen.</p>
+        <ul>
+          <li>Verfehlt der Gegner → Erster Spieler gewinnt.</li>
+          <li>Schafft er es → Es folgt das Shootout.</li>
+        </ul>
+      </div>
+
+      <h3>Shootout</h3>
+      <div class="rule">
+        <p>Beide Spieler wählen ein gegnerisches Loch und setzen sich gegenüber. Jeder erhält 5 Kugeln. Der Spieler, der zuerst alle Kugeln loswurde, darf entscheiden, wer Angreifer ist.</p>
+        <ol>
+          <li>Angreifer wirft nacheinander 5 Kugeln auf das gewählte Loch.</li>
+          <li>Verteidiger darf mit eigenen Kugeln versuchen, abzuwehren.</li>
+          <li>Trifft der Angreifer oder rollt die Verteidigungskugel ins Ziel, bekommt der Angreifer 1 Punkt.</li>
+          <li>Nach 5 Würfen wechseln die Rollen.</li>
+          <li>Bei Gleichstand → neues Shootout.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="faqs">
+      <h2>Hinweise &amp; Varianten</h2>
+      <ul>
+        <li class="example"><strong>Strafwürfe</strong> müssen immer zu Beginn des nächsten Zuges gespielt werden.</li>
+        <li class="example"><strong>Maximal zwei Doppelwurf-Erfolge</strong> in Folge erlaubt.</li>
+        <li class="example"><strong>Fairplay:</strong> Bei Unklarheiten sollte gemeinsam entschieden oder wiederholt werden.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <div><strong>© 2025 Lebibspiele</strong> — Offizielle Spielregeln und Gestaltung inspiriert von Billard. Für Spaß, Präzision und Strategie!</div>
+      <div style="margin-top:12px">Herausgeben von: <strong>Andreas & Matthias Elbel</strong></div>
+      <div>Kontakt für Regeländerungen und Erweiterungen: <a href="mailto:lebib.spiele@gmx.de">lebib.spiele@gmx.de</a></div>
+      <div style="margin-top:12px"><a class="download" href="#" onclick="(function(){alert('Speichere diese Datei als HTML (Rechtsklick → Seite speichern unter...)');})()">Als HTML speichern</a></div>
+    </footer>
+
+
+  </div>
+</body>
+</html>
+
+
+     
+</body>
+</html>
